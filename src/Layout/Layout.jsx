@@ -7,15 +7,17 @@ import Purchase from '../components/Purchase/Purchase';
 import Products from '../components/Products/Products';
 import Recipe from '../components/Recipe/Recipe';
 import photo from '../assets/черника.png'
+import { Outlet } from 'react-router-dom';
 
 
 export default function Layout() {
   const [activePath, setActivePath] = useState(null);
+    const [lang, setLang] = useState('ru');
 
   return (
     <div>
-      <Header activePath={activePath} setActivePath={setActivePath} />
-      <div className="m-auto">
+      <Header lang={lang} setLang={setLang}/>
+      <div className="m-auto bg-blue-950">
         <div className="fixed bottom-2 right-4 w-[350px]">
           <div className="relative w-full flex justify-center items-end">
             <img src={photo} className="absolute -top-45 z-0 w-46 h-56 object-cover" />
@@ -29,11 +31,12 @@ export default function Layout() {
             </div>
           </div>
         </div>
-        <Home />
-        <Menu />
-        <Products />
-        <Recipe />
-        <Purchase />
+        <Home lang={lang}/>
+        <Menu lang={lang}/>
+        <Products lang={lang}/>
+        <Recipe lang={lang}/>
+        <Purchase lang={lang}/>
+        {/* <Outlet/> */}
       </div>
       <Footer />
     </div>
