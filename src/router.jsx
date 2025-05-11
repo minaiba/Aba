@@ -6,6 +6,7 @@ import Purchase from "./components/Purchase/Purchase";
 import Products from "./components/Products/Products";
 import Recipe from "./components/Recipe/Recipe";
 import Notice from "./components/Notice/Notice";
+import User from "./components/Profile/User";
 
 export const myRouter = createBrowserRouter ([
     {
@@ -13,29 +14,29 @@ export const myRouter = createBrowserRouter ([
         element: <Layout/>,
         children: [
             {
-                path: 'home',
-                element: <Home/>
+                path: 'user',
+                element: <User/>
             },
-            {
-                path: 'menu',
-                element: <Menu/>
-            },
-            {
-                path: 'purchase',
-                element: <Purchase/>
-            },
-            {
-                path: 'product',
-                element: <Products/>
-            },
-            {
-                path: 'recipe',
-                element: <Recipe/>
-            },
-            {
-                path: 'notice',
-                element: <Notice/>
-            },
+            // {
+            //     path: 'menu',
+            //     element: <Menu/>
+            // },
+            // {
+            //     path: 'purchase',
+            //     element: <Purchase/>
+            // },
+            // {
+            //     path: 'product',
+            //     element: <Products/>
+            // },
+            // {
+            //     path: 'recipe',
+            //     element: <Recipe/>
+            // },
+            // {
+            //     path: 'notice',
+            //     element: <Notice/>
+            // },
         ]
     }
 ])

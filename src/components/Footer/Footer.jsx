@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import logo from '../../assets/logoAiba.png';
 import { Link } from 'react-router-dom';
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
+import { translations } from '../Notice/Translations';
 
-export default function Footer() { 
+export default function Footer({lang}) { 
+      const t = translations[lang];
   return (
   <div className="font-serif w-full shadow-md bg-white text-blue-950 text-[19px]">
       <div className="max-w-[1200px] mx-auto py-10 grid grid-cols-1 md:grid-cols-3 gap-10 px-4">
@@ -11,24 +13,22 @@ export default function Footer() {
           <Link to="/main">
             <img src={logo} alt="Aiba logo" className="w-[100px] h-auto mb-4" />
           </Link>
-          <p className="max-w-[300px]">
-            Aiba — чтобы не стоять у холодильника и не страдать: еда по плану, время в запасе, мозг в покое.
-          </p>
+          <p className="max-w-[300px]">{t.title}</p>
         </div>
         <div className="grid grid-cols-2 gap-6">
           <ul className="space-y-3">
-            <li><Link to="/home" className="hover:underline hover:text-blue-700">Главная</Link></li>
-            <li><Link to="/conditions" className="hover:underline hover:text-blue-700">О нас</Link></li>
-            <li><Link to="/connection" className="hover:underline hover:text-blue-700">Политика конфиденциальности</Link></li>
+            <li><Link to="/home" className="hover:underline hover:text-blue-700">{t.main}</Link></li>
+            <li><Link to="/conditions" className="hover:underline hover:text-blue-700">{t.our}</Link></li>
+            <li><Link to="/connection" className="hover:underline hover:text-blue-700">{t.confidentiality}</Link></li>
           </ul>
           <ul className="space-y-3 ml-18">
-            <li><Link to="/reviews" className="hover:underline hover:text-blue-700">Пользовательское соглашение</Link></li>
-            <li><Link to="/contacts" className="hover:underline hover:text-blue-700">Контакты</Link></li>
-            <li><Link to="/feedback" className="hover:underline hover:text-blue-700">Отзывы</Link></li>
+            <li><Link to="/reviews" className="hover:underline hover:text-blue-700">{t.user}</Link></li>
+            <li><Link to="/contacts" className="hover:underline hover:text-blue-700">{t.contacts}</Link></li>
+            <li><Link to="/feedback" className="hover:underline hover:text-blue-700">{t.reviews}</Link></li>
           </ul>
         </div>
         <div className='ml-28'>
-          <h4 className="mb-4 font-semibold">Связаться с нами</h4>
+          <h4 className="mb-4 font-semibold">{t.connect}</h4>
           <div className="space-y-4">
             <div className="flex gap-3">
               <FaPhoneAlt className="mt-5" />
@@ -39,14 +39,12 @@ export default function Footer() {
             </div>
             <div className="flex gap-3 items-center">
               <FaEnvelope />
-              <a href="mailto:aiba@gmail.com" className="hover:text-blue-700">aiba@gmail.com</a>
+              <a href="" className="hover:text-blue-700">aiba@gmail.com</a>
             </div>
           </div>
         </div>
       </div>
-      <div className="border-t border-gray-300 text-center py-4 text-sm">
-        © {new Date().getFullYear()} Aiba. Все права защищены.
-      </div>
+      <div className="border-t border-gray-300 text-center py-4 text-sm"> © {new Date().getFullYear()} Aiba. {t.law} </div>
     </div>
   )
 }

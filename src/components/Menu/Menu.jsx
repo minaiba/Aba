@@ -56,7 +56,7 @@ export default function Menu({ lang }) {
   };
 
   return (
-    <div className='bg-blue-950'>
+    <div className='bg-blue-900'>
       <div className="text-white w-full max-w-[1200px] m-auto py-10 px-4">
         <h1 className="text-4xl text-center font-bold italic mb-8">{t.Menu}</h1>
         <div className="flex justify-center flex-wrap gap-4 max-w-6xl mx-auto">
