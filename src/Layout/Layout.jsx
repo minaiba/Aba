@@ -19,11 +19,11 @@ export default function Layout() {
       <div className="m-auto bg-blue-900">
      
          <Home lang={lang}/>
-        <Outlet/>            
-        {/* <Menu lang={lang}/>
+        {/* <Outlet/>             */}
+        <Menu lang={lang}/>
         <Products lang={lang}/>
         <Recipe lang={lang}/>
-        <Purchase lang={lang}/>  */}
+        <Purchase lang={lang}/> 
       </div>
       <Footer lang={lang}/>
     </div>

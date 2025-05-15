@@ -63,7 +63,7 @@ export default function Menu({ lang }) {
           {menuData.map((day, index) => (
             <div
               key={day.date.format("YYYY-MM-DD")}
-              className="bg-white text-blue-950 rounded-xl p-4 w-80 shadow hover:scale-[1.03] transition cursor-pointer"
+              className="bg-white/10 backdrop-blur-md rounded-xl p-4 w-80 shadow hover:scale-[1.03] transition cursor-pointer"
               onClick={() => openModal(index)}
             >
               <h2 className="text-md font-bold text-center mb-1">
@@ -84,7 +84,7 @@ export default function Menu({ lang }) {
 
         {/* Modal */}
         {selectedDayIndex !== null && (
-          <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+          <div className="fixed inset-0 backdrop-blur-md bg-blue/5 flex items-center justify-center z-50">
             <div className="bg-white rounded-xl p-6 w-[90%] max-w-md text-blue-950">
               <h2 className="text-xl font-bold mb-4">
                 {t.editMenu}: {menuData[selectedDayIndex].date.format("dd, D MMMM")}
